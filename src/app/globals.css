@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-darkBg: #0B0F19;
+  --color-cardBg: #111827;
+  --color-primaryAccent: #00F2FE;
+  --color-secondaryAccent: #10B981;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-darkBg);
+    color: #f3f4f6;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0F19;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+/* Tech Stack Marquee Animation Keyframes */
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+/* Safari prefix */
+@-webkit-keyframes scrollMarquee {
+  0% {
+    -webkit-transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-33.333%);
+  }
+}
+
+/* ID Card Click Swing Animation */
+@keyframes cardSwing {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(25deg); }
+  40% { transform: rotate(-20deg); }
+  60% { transform: rotate(12deg); }
+  80% { transform: rotate(-6deg); }
+  100% { transform: rotate(0deg); }
+}
